@@ -13,3 +13,32 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+:root {
+  --accent: #45d3a4;
+  --primary: #9ae59a;
+  --secondary: rgba(0, 0, 0, 0.85);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  font-weight: bold;
+  color: inherit;
+}
+
+/* a:hover,
+a:focus,
+a.active {
+  color: var(--accent);
+  font-weight: bold;
+} */

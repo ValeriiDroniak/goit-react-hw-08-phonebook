@@ -8,10 +8,10 @@
     "prettier"
   ],
   "rules": {
-    "jsx-quotes": [
-      1,
-      "prefer-double"
-    ],
+    // "jsx-quotes": [
+    //   1,
+    //   "prefer-double"
+    // ],
     "prettier/prettier": [
       "error",
       {
@@ -20,8 +20,8 @@
       {
         "usePrettierrc": true
       }
-    ],
-    "arrow-body-style": "off",
-    "prefer-arrow-callback": "off"
+    ]
+    // "arrow-body-style": "off",
+    // "prefer-arrow-callback": "off"
   }
 }
