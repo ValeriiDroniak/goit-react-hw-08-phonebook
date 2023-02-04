@@ -13,6 +13,7 @@ import storage from 'redux-persist/lib/storage';
 import { authReducer } from './auth/slice';
 import { contactsReducer } from './contacts/slice';
 import { filterSlice } from './filterSlice';
+import { toastSlice } from './toast/slice';
 
 const middleware = [
   ...getDefaultMiddleware({
@@ -39,6 +40,7 @@ export const store = configureStore({
     auth: persistReducer(authPersistConfig, authReducer),
     contacts: persistReducer(contactsPersistConfig, contactsReducer),
     filter: filterSlice.reducer,
+    toast: toastSlice.reducer,
   },
   middleware,
   devTools: process.env.NODE_ENV === 'development',

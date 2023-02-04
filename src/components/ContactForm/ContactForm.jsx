@@ -5,6 +5,7 @@ import { addContact } from 'redux/contacts/operations';
 import { selectContacts } from 'redux/contacts/selectors';
 import { Error, FieldInput, MyForm, Label } from './ContactForm.styled';
 import { Button, Typography } from '@mui/material';
+import { setToast } from 'redux/toast/slice';
 
 const nameRedex = /^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$/;
 const numberRedex =
@@ -36,10 +37,25 @@ export const ContactForm = () => {
 
   const handleSubmit = (values, { resetForm }) => {
     if (findContactByName(values.name)) {
-      return alert(`${values.name} is already in contacts`);
+      dispatch(
+        setToast({
+          open: true,
+          message: `${values.name} is already in contacts`,
+          condition: 'info',
+        })
+      );
+
+      return;
     }
 
     dispatch(addContact(createContact(values)));
+    dispatch(
+      setToast({
+        open: true,
+        message: 'The Contact is added',
+        condition: 'success',
+      })
+    );
 
     resetForm();
   };

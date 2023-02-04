@@ -3,12 +3,20 @@ import { Formik } from 'formik';
 import { Button, Typography } from '@mui/material';
 import { register } from 'redux/auth/operations';
 import { FieldInput, Label, MyForm } from 'components/ContactForm';
+import { setToast } from 'redux/toast/slice';
 
 export const RegisterForm = () => {
   const dispatch = useDispatch();
 
   const handleSubmit = (values, { resetForm }) => {
     dispatch(register(values));
+    dispatch(
+      setToast({
+        open: true,
+        message: 'Congratulations, now you can use our app',
+        condition: 'success',
+      })
+    );
     resetForm();
   };
 

@@ -1,8 +1,9 @@
 import { Outlet } from 'react-router-dom';
-import { Toaster } from 'react-hot-toast';
+// import { Toaster } from 'react-hot-toast';
+import { AppBar, Box, Container, Typography } from '@mui/material';
 import { Suspense } from 'react';
 import { Header } from 'components/Header';
-import { AppBar, Box, Container, Typography } from '@mui/material';
+import { Toast } from 'components/Toast';
 
 export const Layout = () => {
   return (
@@ -27,7 +28,7 @@ export const Layout = () => {
             <Outlet />
           </Suspense>
         </Box>
-        <Toaster position="top-right" reverseOrder={false} />
+        {/* <Toaster position="top-right" reverseOrder={false} /> */}
       </Box>
       <AppBar
         component="footer"
@@ -45,6 +46,7 @@ export const Layout = () => {
           </Typography>
         </Container>
       </AppBar>
+      <Toast />
     </Box>
   );
 };
