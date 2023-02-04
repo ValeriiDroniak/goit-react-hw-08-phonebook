@@ -15,7 +15,17 @@ export const UserMenu = () => {
         gap: '12px',
       }}
     >
-      <Typography fontWeight="700">Welcome, {user.name}</Typography>
+      <Typography fontWeight="500">
+        Welcome,
+        <Typography
+          fontWeight="900"
+          component="span"
+          color="rgba(255, 255, 255, 0.5)"
+        >
+          {' '}
+          {user.name}
+        </Typography>
+      </Typography>
       <Button
         variant="contained"
         type="button"
